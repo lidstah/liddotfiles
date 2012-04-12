@@ -1,0 +1,11 @@
+set hintkeys=asdfghjklm
+set hlfind
+set incfind
+set showtabline=never
+set complete=history,suggestion,search,bookmark
+set defsearch=google
+set editor='urxvt -e vim -f +<line> +"sil! call cursor(0, <column>)" <file>'
+set downloadsort=-active,-date
+color simple
+nnoremap j 4j
+nnoremap k 4k

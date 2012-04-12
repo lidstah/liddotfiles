@@ -1,0 +1,7 @@
+out_to_x no
+out_to_console yes
+update_interval 3.0
+total_run_times 0
+use_spacer none
+TEXT
+[ $battery $battery_time :: ${cpu cpu1}% - ${cpu cpu2}% :: ${wireless_essid wlan0} ${wireless_link_qual_perc wlan0}% :: $memperc% $mem/$memmax :: ${freq}MHz ${ibm_fan}rpm ${ibm_temps 0}°C :: $time - ${uptime_short} ]

@@ -1,10 +1,6 @@
-/* This little piece of code is meant to be used with the ii IRC client from
- * suckless.org great thx to the suckless ppl for this awesome little piece of
- * code. There will be and THERE IS many errors in this program.  Feel free to
- * distribute, modify, implement, use, as long as you comply with the WTFPL
- * licence.  You should have received a copy of this licence within this source
- * code.  © lidstah 2011 For the moment, it is quite simple. I'll add stuff to
- * keep track of votes and of WHO voted to avoid double votes or such soon.
+/* this little piece of badly written software is meant to be used with the
+ * ii irc client. WTFPublic Licence, lidstah, 2011-2012. Send me a beer if it's
+ * usefull. Else, go fuck yourself! :)
  */
 
 #include <stdio.h>

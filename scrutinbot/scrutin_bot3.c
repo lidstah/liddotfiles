@@ -15,7 +15,7 @@ int main(int argc, const char *argv[])
 	FILE* fichier_in = NULL; // le FIFO sur lequel on sortira les résultats : ~/irc/irc.leserveur.bla/\#ton_canal/in
 	long oldPos = 0; 
 	long actualPos = 0; 
-	long nbBits = 0; // pour fseek depuis EOF
+	long nbBits = 0; // pour fseek depuis EOF -- est ce bien nécessaire?
 	char actual_car = '0'; 
 	short int areWeVoting = 0; // Flag de vote (si !#V)
 	short int votePour = 0; // compteur des votes positifs (!#+)

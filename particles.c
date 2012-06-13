@@ -12,6 +12,7 @@ void Cube();
 double angle = 0;
 int color = 0;
 int drawMode = 0;
+int redrawStuff = 1;
 int rotateY = 0;
 int rotateX = 0;
 int rotateZ = 0;
@@ -93,6 +94,15 @@ int main(int argc, const char *argv[])
 						case SDLK_a:
 							angle_multiplier++;
 							break;
+						case SDLK_r:
+							if (redrawStuff == 1) {
+								redrawStuff = 0;
+							}
+							else
+							{
+								redrawStuff = 1;
+							}
+							break;
 						case SDLK_z:
 							angle_multiplier--;
 							if (angle_multiplier == 0) {
@@ -122,7 +132,10 @@ int main(int argc, const char *argv[])
 
 void DrawStuff()
 {
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // couleurs et Z-buffer
+	if (redrawStuff != 0) {
+		// si redrawStuff est > 0 on refresh au VBL - rigolo en mode points
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); 
+	}
 
 	glMatrixMode( GL_MODELVIEW ); // init GL Matrix
 	glLoadIdentity();
@@ -172,7 +185,6 @@ void DrawStuff()
 			glBegin(GL_LINE_STRIP);
 			break;
 	}
-	//glBegin(GL_LINE_STRIP);
 	Cube();
 
 	glEnd();

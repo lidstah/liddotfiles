@@ -5,8 +5,9 @@ set nocompatible
 set t_Co=256
 
 syntax enable
-set background=light
-colorscheme solarized
+"set background=dark
+colorscheme bubblegum
+"colorscheme solarized
 set number
 set incsearch
 let g:ConqueTerm_Color = 1
@@ -29,6 +30,15 @@ set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
+set wildmenu		" enhanced command line completion
+set scrolloff=5
+set encoding=utf-8
+set fileencodings=ucs-bom,utf-8,default,latin1
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
@@ -109,7 +119,7 @@ nnoremap <leader><space> :noh<cr>
 map <leader>cd :cd %:p:h<CR>
 let g:slimv_swank_cmd = '! urxvtc -e sbcl --load /usr/share/emacs/site-lisp/slime/start-swank.lisp &'
 nmap <F8> :TagbarToggle<CR>
-" let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'fancy'
 function! NumberToggle()
 	if(&relativenumber == 1)
 		set number

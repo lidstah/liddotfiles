@@ -8,14 +8,14 @@
 void DrawStuff();
 void Cube();
 
-// variables statiques - A NETTOYER
+// variables statiques
 double angle = 0;
 int color = 0;
 int drawMode = 0;
+int redrawStuff = 1;
 int rotateY = 0;
 int rotateX = 0;
 int rotateZ = 0;
-int redrawStuff = 1;
 
 int main(int argc, const char *argv[])
 {
@@ -25,7 +25,7 @@ int main(int argc, const char *argv[])
 
 	int colorFlag = 0; // Flag
 	int angle_multiplier = 1; // valeur de départ vitesse angulaire
-	int stopFlag = 1; // Flag
+	int continuer = 1; // Flag
 
 	Uint32 last_time = SDL_GetTicks(); //timers
 	Uint32 current_time, elapsed_time;
@@ -65,7 +65,7 @@ int main(int argc, const char *argv[])
 					switch(event.key.keysym.sym)
 					{
 						case SDLK_ESCAPE: // esc == quitte
-							exit(0); // purger les pointeurs - cf log valgrind
+							exit(0);
 							break;
 						case SDLK_RETURN:
 							drawMode++;
@@ -98,7 +98,8 @@ int main(int argc, const char *argv[])
 							if (redrawStuff == 1) {
 								redrawStuff = 0;
 							}
-							else {
+							else
+							{
 								redrawStuff = 1;
 							}
 							break;
@@ -131,8 +132,9 @@ int main(int argc, const char *argv[])
 
 void DrawStuff()
 {
-	if (redrawStuff == 1) {
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // couleurs et Z-buffer
+	if (redrawStuff != 0) {
+		// si redrawStuff est > 0 on refresh au VBL - rigolo en mode points
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); 
 	}
 
 	glMatrixMode( GL_MODELVIEW ); // init GL Matrix
@@ -183,7 +185,6 @@ void DrawStuff()
 			glBegin(GL_LINE_STRIP);
 			break;
 	}
-	//glBegin(GL_LINE_STRIP);
 	Cube();
 
 	glEnd();

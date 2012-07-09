@@ -1,17 +1,15 @@
 " lidstah's .vimrc
-
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 set nocompatible
-
 set t_Co=256
 
 syntax enable
-"set background=dark
+" set background=dark
 colorscheme bubblegum
 "colorscheme solarized
 set number
 set incsearch
-let g:ConqueTerm_Color = 1
-let g:ConqueTerm_TERM = 'xterm'
 set smartcase
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
@@ -32,8 +30,6 @@ set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 set wildmenu		" enhanced command line completion
 set scrolloff=5
-set encoding=utf-8
-set fileencodings=ucs-bom,utf-8,default,latin1
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -57,9 +53,7 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
-au BufWinLeave * mkview
-au BufWinEnter * silent loadview
-au Bufenter *.hs compiler ghc
+filetype plugin indent on
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
 
@@ -91,7 +85,6 @@ else
   set autoindent		" always set autoindenting on
 
 endif " has("autocmd")
-filetype plugin on
 let g:haddock_browser = "firefox"
 
 " Convenient command to see the difference between the current buffer and the
@@ -119,7 +112,6 @@ nnoremap <leader><space> :noh<cr>
 map <leader>cd :cd %:p:h<CR>
 let g:slimv_swank_cmd = '! urxvtc -e sbcl --load /usr/share/emacs/site-lisp/slime/start-swank.lisp &'
 nmap <F8> :TagbarToggle<CR>
-let g:Powerline_symbols = 'fancy'
 function! NumberToggle()
 	if(&relativenumber == 1)
 		set number
@@ -128,3 +120,5 @@ function! NumberToggle()
 	endif
 endfunc
 nnoremap <leader>n :call NumberToggle()<CR>
+nnoremap <leader>o :CommandTBuffer<CR>
+nnoremap <F5> :GundoToggle<CR>

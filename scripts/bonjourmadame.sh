@@ -8,7 +8,8 @@ MADAME_URL="http://www.bonjourmadame.fr"
 wget -q -O "/tmp/bonjourmadame" $MADAME_URL
 
 # on extrait l'adresse de l'image qui nous intéresse
-IMAGE_LOCATION=`sed -n 597p /tmp/bonjourmadame | cut -d '"' -f 2`
+IMAGE_LOCATION=`grep media.tumblr.com /tmp/bonjourmadame | sed -n 3p | cut -d '"' -f 2`
+#echo $IMAGE_LOCATION
 
 # on pompe et on affiche :)
 wget -q -O "/tmp/madame.png" $IMAGE_LOCATION

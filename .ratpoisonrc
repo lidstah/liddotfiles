@@ -1,4 +1,6 @@
-bind c exec urxvtc
+exec xmodmap -e "keycode 115 = F19"
+escape F19
+bind c exec urxvt
 definekey top M-b banish
 definekey top M-r resize
 definekey top M-R remove
@@ -21,19 +23,12 @@ definekey top M-f hsplit
 definekey top M-o only
 definekey top M-n nextscreen
 definekey top M-N prevscreen
-definekey top M-a exec mpc --no-status prev
-definekey top M-z exec mpc --no-status next
-definekey top M-e exec mpc --no-status toggle
-set wingravity n
-set padding 0 12 0 0
-set barborder 5
-set border 1
+set wingravity c
+set barborder 1
+set border 0
 set bwcolor #151515
 set fwcolor #999399
-set bgcolor #151515
+set bgcolor #000000
 set fgcolor #afafaf
 set bargravity c
-unmanage panel
-# exec conky | dzen2 -ta c -bg "#151515" -fg "#afafaf" -x 0 -w 1920 -h 10 -fn "-*-fixed-*-*-*-*-9-*-*-*-*-*-iso8859-*"
-exec herbstat.sh
 exec xsetroot -cursor_name left_ptr

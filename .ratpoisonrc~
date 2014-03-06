@@ -1,4 +1,4 @@
-bind c exec urxvtc
+bind c exec xterm
 definekey top M-b banish
 definekey top M-r resize
 definekey top M-R remove

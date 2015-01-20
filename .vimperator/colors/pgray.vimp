@@ -1,0 +1,101 @@
+==Vimperator_Color_Scheme==
+" name: vimPgray
+"
+" Created for matching this GTK+ theme:
+"
+http://www.gnome-look.org/content/show.php/Clearlooks+Zenburn?content=103035
+"
+" Last edited: 
+" Edited by Yu-Jie Lin <http://j.mp/Google-livibetter>
+"
+" Original vimp: 2010-11-01T10:04:00+0800
+"
+http://github.com/VoQn/vimperator-colorscheme/blob/master/colors/default.vimp
+"
+" Reference:
+"  chrome://liberator/locale/styling.html
+" ==VimPGray_Colorscheme_Settings==
+
+" Reset all styles first
+hi clear
+
+hi CompDesccolor: #99                 9; width: 50%;
+hi CompItem[selected]background: #666;
+
+" Used in Comm        and Line
+" Entire bottom line
+hi CmdLine                  color: #aaa; background: #333; font-family:
+Inconsolata; font-size: 12px; padding: 0px; vertical-align: middle; border:
+none;
+
+" Used in the URL column of `bmarks`
+hi CompResultcolor: #aaa; width: 45%; overflow: hidde             n;
+hi CompTitlecolor: #ddc; background: #333; font-weight: bold;
+hi                 CompTitle>*color: #aaa; font-weight: bold; border-top:
+1px solid g               ray; border-bottom: 1px solid #BBB; padding: 1px
+0.5ex;
+
+" Hints!
+hi Hintcolor: white; background-color: #800; border-color: ButtonShadow;
+font-family: Inc                      onsolata; font-size: 12px;
+border-width: 0px; border-style: solid; padding 0 1px;
+hi Hint::aftercontent: attr(number);
+hi HintActivecolor: black; background: #480;                              
+hi HintElemcolor: black; background-color: #880; 
+hi HintImage                              opacity: .5;
+
+" Used also in wrapping error messages as the background  , simple speaking
+hi InfoMsgcolor: #ddc; background: #333;
+
+" Used                     when error on syntax error in vimperatorrc, etc.
+hi LineNrcolor:                   orange; background-color: #333;
+
+hi ErrorMsgcolor: #c22; backgroun                 d-color: #333;
+font-weight: bold; 
+
+" Used in CARET or COMMAND modes
+hi ModeMsgcolor: #ddc; background: #333;
+
+hi MoreMsgcolor: #080; backgr                                     ound:
+#222; font-weight: bold; -moz-border-radius: 5px; padding-left: 5px;
+
+hi Normalcolor: #ddc; background: #333;
+
+" Used in :`js tr<TAB>`
+hi Bo                 oleancolor: #f00;
+hi Functioncolor: #04c;
+hi Nullcolor:
+#00c;
+hi Numbercolor: #00c;
+hi Objectcolor: #c40;
+hi String                                         color: #0c0;
+
+" Used in "Press ENTER..." of `jumps` or `bmarks`, or              "Follow
+Hint..." or `f`
+hi Questioncolor: #080; background: #222;                  font-weight:
+bold; -moz-border-radius: 5px; padding-left: 5px;
+
+hi Searchcolor: #333; background-color: #cc0; font-size: inherit; padding:
+0; paddi                  ng: 0;
+
+hi StatusLinecolor: #ddc; background: #333; font-family: In
+consolata; font-size: 14px; margin-top: 1px;
+
+" Firefox's tabs
+hi TabNumbercolor: #ddc; font-weight: bold; margin: 0; padding-right: .3ex;
+text-shadow: #0               00 -1px 0 0, #000 0 1px 0, #000 1px 0 0, #000
+0 -1px 0;
+
+" Used in `pageinfo` or `jumps`
+hi Titlecolor: #ddc; background: #333; font-weight: bold;
+
+" Used in items                   of Info field of `bmarks`
+hi Keywordcolor: #CC0;
+hi Tagcolor                                           : #0CC;
+hi URLcolor: #080; text-decoration: none; padding: 0 2px;                     
+hi URL:hovercolor: #880; background-color: #222; -moz-border-radiu
+s: 5px; cursor: pointer;
+
+hi ContentSeparatorborder:none;
+
+" vim:set          filetype=vim:

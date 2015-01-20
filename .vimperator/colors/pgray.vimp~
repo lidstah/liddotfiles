@@ -1,0 +1,63 @@
+" ==Vimperator_Color_Scheme==
+" name: vimPgray
+"
+" Created for matching this GTK+ theme:
+"   http://www.gnome-look.org/content/show.php/Clearlooks+Zenburn?content=103035
+"
+" Last edited: 
+" Edited by Yu-Jie Lin <http://j.mp/Google-livibetter>
+"
+" Original vimp: 2010-11-01T10:04:00+0800
+"  http://github.com/VoQn/vimperator-colorscheme/blob/master/colors/default.vimp
+"
+" Reference:
+"  chrome://liberator/locale/styling.html
+" ==VimPGray_Colorscheme_Settings==
+
+" Reset all styles first
+hi clear
+
+hi CompDesccolor: #999; width: 50%;
+hi CompItem[selected]background: #666;
+
+" Used in Command Line
+"                            Entire bottom line
+hi CmdLine                  color: #aaa; background: #333; font-family: Inconsolata; font-size: 12px; padding: 0px; vertical-align: middle; border: none;
+
+" Used in the URL column of `bmarks`
+hi CompResultcolor: #aaa; width: 45%; overflow: hidden;
+hi CompTitlecolor:                               #ddc; background: #333; font-weight: bold;
+hi CompTitle>*color: #a             aa; font-weight: bold; border-top: 1px solid gray; border-bottom: 1px solid #BBB; padding: 1px 0.5ex;
+
+" Hints!
+hi Hintcolor: white; backgro                        und-color: #800; border-color: ButtonShadow; font-family: Inconsolata; font-size: 12px; border-width: 0px; border-style: solid; padding 0 1px;
+hi Hint::aftercontent: attr(number);
+hi HintActiveco                             lor: black; background: #480;
+hi HintElemcolor: black; background-                    color: #880; 
+hi HintImageopacity: .5;
+
+" Used also in wrapping err             or messages as the background, simple speaking
+hi InfoMsgcolor: #d                 dc; background: #333;
+
+" Used when error on syntax error in vimperatorrc, etc.
+hi LineNrcolor: orange; background-color: #333;
+
+hi ErrorMsg                         color: #c22; background-color: #333; font-weight: bold; 
+
+" Used in           CARET or COMMAND modes
+hi ModeMsgcolor: #ddc; background: #333;
+
+h                   i MoreMsgcolor: #080; background: #222; font-weight: bold; -moz-bo                  rder-radius: 5px; padding-left: 5px;
+
+hi Normalcolor: #ddc; backgr                    ound: #333;
+
+" Used in :`js tr<TAB>`
+hi Booleancolor: #f00;
+hi Fun                  ctioncolor: #04c;
+hi Nullcolor: #00c;
+hi Numbercolor: #                                                               00c;
+hi Objectcolor: #c40;
+hi Stringcolor: #0c0;
+
+" vim:set filetype=vim:
+"

@@ -1,13 +1,16 @@
-" lidstah's .vimrc
+" lidstah's .vimrc 
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 set nocompatible
 set t_Co=256
+set backupdir-=.
+set backupdir^=~/tmp,/tmp
 
 syntax enable
-" set background=dark
-colorscheme bubblegum
-"colorscheme solarized
+" set background=light
+colorscheme lid-erosion
+" colorscheme wombat256mod
+" colorscheme bubblegum
 set number
 set incsearch
 set smartcase
@@ -96,6 +99,7 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 set cursorline
+set cursorcolumn
 set ttyfast
 au CursorHoldI * stopinsert
 au InsertEnter * let updaterestore=&updatetime | set updatetime=15000
@@ -106,12 +110,9 @@ let mapleader = ","
 set title
 set listchars=tab:>-,trail:·,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
-nmap <silent> <leader>v :set cursorline<CR>
 set laststatus=2
 nnoremap <leader><space> :noh<cr>
 map <leader>cd :cd %:p:h<CR>
-let g:slimv_swank_cmd = '! urxvtc -e sbcl --load /usr/share/emacs/site-lisp/slime/start-swank.lisp &'
-nmap <F8> :TagbarToggle<CR>
 function! NumberToggle()
 	if(&relativenumber == 1)
 		set number
@@ -120,5 +121,17 @@ function! NumberToggle()
 	endif
 endfunc
 nnoremap <leader>n :call NumberToggle()<CR>
-nnoremap <leader>o :CommandTBuffer<CR>
+" nnoremap <leader>o :CommandTBuffer<CR>
+nnoremap <leader>o :FufFile<CR>
 nnoremap <F5> :GundoToggle<CR>
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:notes_directory = '~/Documents/Notes'
+let g:Powerline_theme='long'
+let g:Powerline_colorscheme='solarized256_dark'
+let g:VimuxOrientation = "v"
+let g:VimuxHeight = "33"
+map <leader>vr :VimuxPromptCommand<CR>
+map <leader>vc :VimuxCloseRunner<CR>
+let g:slime_target = "tmux"

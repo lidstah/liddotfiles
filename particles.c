@@ -126,7 +126,6 @@ int main(int argc, const char *argv[])
 			SDL_Delay(15 - elapsed_time);
 		}
 	}
-
 	return EXIT_SUCCESS;
 }
 

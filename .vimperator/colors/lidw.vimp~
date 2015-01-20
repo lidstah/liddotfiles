@@ -1,0 +1,53 @@
+" ==Zenburn_Color_Scheme==
+" name: lid zenburn variant
+" ==Zenburn_Colorscheme_Settings==
+hi Bell					border: 0 none; background-color: black;
+hi Boolean				color: #CC9393;
+hi CmdLine				font-family: monospace; padding: 1px;
+hi CmdOutput				white-space: pre;
+hi CompDesc				color: #1E828C; width: 50%;
+hi CompGroup
+hi CompGroup:not(:first-of-type)	margin-top: .5em;
+hi CompIcon				width: 16px; min-width: 16px; display: inline-block; margin-right: .5ex;
+hi CompIcon>img				max-width: 16px; max-height: 16px; vertical-align: middle;
+hi CompItem				font-size: 11px;
+hi CompItem>*				padding: 0 .5ex;
+hi CompItem[selected]			color: #323246; background: #1E828C;
+hi CompMsg				font-style: italic; margin-left: 16px;
+hi CompResult				width: 45%; overfloaw: hidden;
+hi CompTitle				color: #ACBC90; background: #191C23; font-weight: bold;
+hi CompTitle>*				padding: 0 .5ex;
+hi ErrorMsg				color: #191C23; background: #CC9393; font-weight: bold;
+hi Filter				font-weight: bold;
+hi FrameIndicator			background-color: #CC9393; opacity: 0.5; z-index: 999; position: fixed; top: 0; bottom: 0; left: 0; right: 0;
+hi Function				color: navy;
+hi Hint					font-family: monospace; font-size: 10px; font-weight: bold; color: #385F38; background-color: #F8F893; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding 0px 1px 0px 1px;
+hi Hint::after				content: attr(number);
+hi HintActive				background: #F18C96; color: #333333;
+hi HintElem				background-color: #8FAF9F; color: #000D18;
+hi HintImage				opacity: .5;
+hi Indicator				color: #1E828C;
+hi InfoMsg				color: #FFFFFF; background: #191C23;
+hi LineNr				color: orange; background: #191C23;
+hi Message				white-space: normal; min-width: 100%; padding-left: 2em; text-indent: -2em; display: block;
+hi ModeMsg				color: #FFFFFF; background: #191C23;
+hi MoreMsg				color: #9ECE9E; background: #191C23;
+hi NonText				color: #1E828C; min-height: 16px; padding-left: 2pxe
+hi Normal				color: #FFFFFF; background: #191C23;
+hi Null					color: #1E828C;
+hi Number				color: #1E828C;
+hi Object				color: maroon;
+hi Preview				color: gray;
+hi Question				color: #9ECE9E; background: #191C23; font-weight: bold;
+hi Search				font-size: inherit; padding: 0; color: #385F38; background-color: #F8F893; padding: 0;
+hi StatusLine				color: #8C8CA0; background: #191C23;
+hi String				color: #9ECE9E;
+hi TabClose
+hi TabIcon
+hi TabNumber				font-weight: bold; margin: 0; padding-right: .3ex;
+hi TabText
+hi Tag					color: #1E828C;
+hi Title				color: #ACBC90; background: #191C23; font-weight: bold;
+hi URL					text-decoration: none; color: #9ECE9E; background: inherit;
+hi URL:hover				text-decoration: underline; cursor: pointer;
+hi WarningMsg				color: #CC9393; background: #191C23;

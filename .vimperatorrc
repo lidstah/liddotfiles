@@ -1,0 +1,15 @@
+"3.1 (created: 2011/04/21 21:46:34)
+set complete=slfS
+set status=input,location,bookmark,history,tabcount,position,ssl
+" source! /home/lidstah/.vimperatorrc.local
+set hintchars=sdfghjkl
+nnoremap j 4j
+nnoremap k 4k
+map J gT
+map K gt
+colorscheme molokai
+" set gui=noaddons,nobookmarks,nomenu,nonavigation,notabs
+set gui=noaddons,nobookmarks,nomenu,nonavigation,notabs
+set scrollbars=false
+
+" vim: set ft=vimperator:

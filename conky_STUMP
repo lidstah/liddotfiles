@@ -1,0 +1,7 @@
+out_to_x no
+out_to_console yes
+update_interval 2.0
+total_run_times 0
+use_spacer none
+TEXT
+[ Down: ${downspeed}/s - Up: ${upspeed}/s | ${cpu cpu1}% - ${cpu cpu2}% - ${cpu cpu3}% - ${cpu cpu4}% | $memperc% $mem/$memmax | $mpd_smart | ${exec cat /tmp/weather.txt} | ${exec cat ~/karma.txt} | ${exec cat /mnt/ramdisk/ekla.txt} | ${time} ]

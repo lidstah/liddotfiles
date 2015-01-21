@@ -1,7 +1,7 @@
 out_to_x no
 out_to_console yes
-update_interval 3.0
+update_interval 2.0
 total_run_times 0
 use_spacer none
 TEXT
-[ $battery $battery_time :: ${cpu cpu1}% - ${cpu cpu2}% :: ${wireless_essid wlan0} ${wireless_link_qual_perc wlan0}% :: $memperc% $mem/$memmax :: ${freq}MHz ${ibm_fan}rpm ${ibm_temps 0}°C :: $time - ${uptime_short} ]
+[ ß ${downspeed}/s - Þ ${upspeed}/s | Î ${cpu cpu1}% - ${cpu cpu2}% - ${cpu cpu3}% - ${cpu cpu4}% | û $memperc% $mem/$memmax | ê $mpd_smart | ${exec cat /tmp/weather.txt} | ${exec cat ~/karma.txt} | ${exec cat /mnt/ramdisk/ekla.txt} | É ${time} ]

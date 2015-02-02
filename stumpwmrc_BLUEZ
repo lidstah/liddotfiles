@@ -5,22 +5,22 @@
 
 (set-font "-*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*")
 (set-normal-gravity :center)
-(set-fg-color "#c0b18b")
-(set-bg-color "#1f1f1f")
-(set-border-color "#4A3638")
+(set-fg-color "#9BBBC6")
+(set-bg-color "#191C23")
+(set-border-color "#323246")
 ;;(set-focus-color "dimgray")
-(set-focus-color "#d17b49")
-(set-unfocus-color   "#1f1f1f")
-(set-win-bg-color    "#1f1f1f")
-(setf *colors* (list "#4A3637"          ; 0 black
-                     "#d17b49" ; 1 red
-                     "#7b8748"     ; 2 green
-                     "#af865a"        ; 3 yellow
-                     "#535C5C"     ; 4 blue
-                     "#775759"     ; 5 magenta
-                     "#6d715e"    ; 6 cyan
-                     "#c0b18b"      ; 7 white
-                     "#1f1f1f"       ; 8 personal
+(set-focus-color "#506070")
+(set-unfocus-color   "#191C23")
+(set-win-bg-color    "#191C23")
+(setf *colors* (list "#323246"          ; 0 black
+                     "#5A7882" ; 1 red
+                     "#8C8CA0"     ; 2 green
+                     "#1E828C"        ; 3 yellow
+                     "#3C788C"     ; 4 blue
+                     "#6EA0B4"     ; 5 magenta
+                     "#6E8CA0"    ; 6 cyan
+                     "#96BEC8"      ; 7 white
+                     "#506070"       ; 8 personal
                      "#706050")); 9 personal
 (update-color-map (current-screen))
 (set-msg-border-width 7)
@@ -63,9 +63,9 @@
             '(:eval (run-shell-command *conky-command* t))))
 
 (setf *mode-line-timeout* 2)
-(setf *mode-line-background-color* "#1f1f1f")
-(setf *mode-line-foreground-color* "#c0b18b")
-(setf *mode-line-border-color* "#4A3638")
+(setf *mode-line-background-color* "#191C23")
+(setf *mode-line-foreground-color* "#9BBBC6")
+(setf *mode-line-border-color* "#323246")
 (setf *mode-line-position* :bottom)
 
 (define-key *top-map* (kbd "Pause") "exec mpc toggle")
@@ -96,7 +96,7 @@
 (define-key *top-map* (kbd "M-V") "info")
 (define-key *top-map* (kbd "M-!") "exec")
 ;;; (define-key *top-map* (kbd "M-p") "exec dmenu_run -l 20 -p '>' -i -nb '#191C23' -nf '#9BBBC6' -sb '#9BBBC6' -sf '#191C23'")
-(define-key *top-map* (kbd "M-p") "exec rofi -rnow -font 'Terminus 12' -fg '#c0b18b' -bg '#1f1f1f' -lines '20' -columns '3' -hlfg '#1f1f1f' -hlbg '#c0b18b' -bc '#d17b49' -bw '3'")
+(define-key *top-map* (kbd "M-p") "exec rofi -rnow -font 'Terminus 12' -fg '#9BBBC6' -bg '#191C23' -lines '20' -columns '3' -hlfg '#191C23' -hlbg '#9BBBC6' -bc '#506070' -bw '3'")
 (define-key *top-map* (kbd "M-;") "eval")
 (define-key *top-map* (kbd "M-:") "colon")
 (define-key *top-map* (kbd "M-U") "windowlist")

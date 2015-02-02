@@ -1,41 +1,40 @@
 Xft.dpi: 96
-*cursorColor:  #c0b18b
+*foreground:  #9BBBC6
+*background:  #191C23
+*cursorColor:  #9BBBC6
 *colorUL:      #1E828C
 
-*.background: #1f1f1f
-*.foreground: #c0b18b
+!Black
+*color0:               #323246
+*color8:               #323246
 
-!black
-*color0:#4A3637
-*color8:#4A3637
-!
-!!red
-*color1:#d17b49
-*color9:#d17b49
-!
-!!green
-*color2:#7b8748
-*color10:#7b8748
-!
-!!yellow
-*color3:#af865a
-*color11:#af865a
-!
-!!blue
-*color4:#535C5C
-*color12:#535C5C
+!Red
+*color1:               #5A7882
+*color9:               #5A7882
 
-!magenta
-*color5:#775759
-*color13:#775759
+!Green
+*color2:               #8C8CA0
+*color10:              #8C8CA0
 
-!cyan
-*color6:#6d715e
-*color14:#6d715e
+!Yellow
+*color3:               #1E828C
+*color11:              #1E828C
 
-!white
-*color7:#c0b18b
-*color15:#c0b18b
+!Blue
+*color4:               #3C788C
+*color12:              #3C788C
+
+!Magenta
+*color5:               #6EA0B4
+*color13:              #6EA0B4
+
+!Cyan
+*color6:               #6E8CA0
+*color14:              #6E8CA0
+
+!White
+*color7:               #96BEC8
+*color15:              #96BEC8
 
 !urxvt.font: xft:Bitstream Vera Sans Mono-7.5
 !urxvt.font: xft:Monospace:size=8

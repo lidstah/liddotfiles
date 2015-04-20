@@ -13,15 +13,15 @@
 (set-unfocus-color   "#1f1f1f")
 (set-win-bg-color    "#1f1f1f")
 (setf *colors* (list "#4A3637"          ; 0 black
-                     "#d17b49" ; 1 red
-                     "#7b8748"     ; 2 green
-                     "#af865a"        ; 3 yellow
-                     "#535C5C"     ; 4 blue
-                     "#775759"     ; 5 magenta
-                     "#6d715e"    ; 6 cyan
-                     "#c0b18b"      ; 7 white
-                     "#1f1f1f"       ; 8 personal
-                     "#706050")); 9 personal
+                     "#d17b49"          ; 1 red
+                     "#7b8748"          ; 2 green
+                     "#af865a"          ; 3 yellow
+                     "#535C5C"          ; 4 blue
+                     "#775759"          ; 5 magenta
+                     "#6d715e"          ; 6 cyan
+                     "#c0b18b"          ; 7 white
+                     "#1f1f1f"          ; 8 personal
+                     "#706050"))        ; 9 personal
 (update-color-map (current-screen))
 (set-msg-border-width 7)
 (set-frame-outline-width 3)

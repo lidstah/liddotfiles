@@ -59,8 +59,8 @@
 ;; modeline
 
 (setf *screen-mode-line-format*
-      (list "^b%g :: %W ::^B^8 %u^>"
-            '(:eval (run-shell-command *conky-command* t))))
+  (list "^b%g :: %W ::^B^8 %u^>"
+    '(:eval (run-shell-command *conky-command* t))))
 
 (setf *mode-line-timeout* 2)
 (setf *mode-line-background-color* "#1f1f1f")

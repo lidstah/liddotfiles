@@ -1,0 +1,143 @@
+;;; -*- lisp -*-
+;;; #Date#: 30 May 2010 16:56
+
+(in-package :stumpwm)
+
+(set-font "-*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*")
+(set-normal-gravity :center)
+(set-fg-color "#c0c5ce")
+(set-bg-color "#2b303b")
+(set-border-color "#65737e")
+;;(set-focus-color "dimgray")
+(set-focus-color "#65737e")
+(set-unfocus-color   "#2b303b")
+(set-win-bg-color    "#2b303b")
+(setf *colors* (list "#2b303b"          ; 0 black
+                     "#bf616a" ; 1 red
+                     "#a3be8c"     ; 2 green
+                     "#ebcb8b"        ; 3 yellow
+                     "#8fa1b3"     ; 4 blue
+                     "#b48ead"     ; 5 magenta
+                     "#96b5b4"    ; 6 cyan
+                     "#c0c5ce"      ; 7 white
+                     "#1f1f1f"       ; 8 personal
+                     "#706050")); 9 personal
+(update-color-map (current-screen))
+(set-msg-border-width 7)
+(set-frame-outline-width 3)
+(setf *maxsize-border-width* 3)
+(setf *transient-border-width* 2)
+(setf *normal-border-width* 2)
+(setf *window-border-style* :thin)
+(setf *message-window-gravity* :center)
+(setf *input-window-gravity* :center)
+(setf *mouse-focus-policy* :click)
+(define-key *root-map* (kbd "c") "exec urxvtc")
+
+;; I need to tag irc window on all groups
+;; The Dirty Way :-)
+
+(run-commands "load-module windowtags")
+
+(defcommand my_little_gnext () ()
+  (run-commands "gnext" "fselect 0" "pull-tag irc"))
+
+(defcommand my_little_gprev () ()
+  (run-commands "gprev" "fselect 0" "pull-tag irc"))
+
+(defcommand my_little_gselect () ()
+  (run-commands "gselect" "fselect 0" "pull-tag irc"))
+
+(defcommand my_little_relwarp () ()
+  (run-commands "banish" "ratrelwarp -800 -800"))
+
+;; I need my conky friend
+
+(defvar *conky-command*
+  "cat /mnt/ramdisk/conkytext")
+
+;; modeline
+
+(setf *screen-mode-line-format*
+      (list "^b%g :: %W ::^B^8 %u^>"
+            '(:eval (run-shell-command *conky-command* t))))
+
+(setf *mode-line-timeout* 2)
+(setf *mode-line-background-color* "#2b303b")
+(setf *mode-line-foreground-color* "#c0c5ce")
+(setf *mode-line-border-color* "#2b303b")
+(setf *mode-line-position* :bottom)
+
+(define-key *top-map* (kbd "Pause") "exec mpc toggle")
+(define-key *top-map* (kbd "Print") "exec mpc prev")
+(define-key *top-map* (kbd "Scroll_Lock") "exec mpc next")
+(define-key *top-map* (kbd "M-Pause") "exec echo pause > $HOME/.mplayer_fifo")
+(define-key *top-map* (kbd "M-Print") "exec echo seek -30 > $HOME/.mplayer_fifo")
+(define-key *top-map* (kbd "M-Scroll_Lock") "exec echo seek +30 > $HOME/.mplayer_fifo")
+(define-key *top-map* (kbd "M-h") "move-focus left")
+(define-key *top-map* (kbd "M-l") "move-focus right")
+(define-key *top-map* (kbd "M-j") "move-focus down")
+(define-key *top-map* (kbd "M-k") "move-focus up")
+(define-key *top-map* (kbd "M-H") "move-window left")
+(define-key *top-map* (kbd "M-L") "move-window right")
+(define-key *top-map* (kbd "M-J") "move-window down")
+(define-key *top-map* (kbd "M-K") "move-window up")
+(define-key *top-map* (kbd "M-s") "vsplit")
+(define-key *top-map* (kbd "M-f") "hsplit")
+(define-key *top-map* (kbd "M-i") "next-in-frame")
+(define-key *top-map* (kbd "M-I") "prev-in-frame")
+(define-key *top-map* (kbd "M-E") "fselect")
+(define-key *top-map* (kbd "M-e") "pull-tag vim")
+(define-key *top-map* (kbd "C-M-h") "exchange-direction left")
+(define-key *top-map* (kbd "C-M-l") "exchange-direction right")
+(define-key *top-map* (kbd "C-M-j") "exchange-direction down")
+(define-key *top-map* (kbd "C-M-k") "exchange-direction up")
+(define-key *top-map* (kbd "M-v") "show-window-properties")
+(define-key *top-map* (kbd "M-V") "info")
+(define-key *top-map* (kbd "M-!") "exec")
+;;; (define-key *top-map* (kbd "M-p") "exec dmenu_run -l 20 -p '>' -i -nb '#191C23' -nf '#9BBBC6' -sb '#9BBBC6' -sf '#191C23'")
+(define-key *top-map* (kbd "M-p") "exec rofi -rnow -font 'Terminus 12' -fg '#c0c5ce' -bg '#2b303b' -lines '20' -columns '3' -hlfg '#2b303b' -hlbg '#c0c5ce' -bc '#65737e' -bw '3'")
+(define-key *top-map* (kbd "M-;") "eval")
+(define-key *top-map* (kbd "M-:") "colon")
+(define-key *top-map* (kbd "M-U") "windowlist")
+(define-key *top-map* (kbd "M-u") "next-urgent")
+(define-key *top-map* (kbd "M-w") "frame-windowlist")
+(define-key *top-map* (kbd "M-A") "time")
+(define-key *top-map* (kbd "M-a") "title")
+(define-key *top-map* (kbd "M-g") "vgroups")
+(define-key *top-map* (kbd "M-n") "my_little_gnext")
+(define-key *top-map* (kbd "C-M-n") "gnext-with-window")
+(define-key *top-map* (kbd "M-N") "my_little_gprev")
+(define-key *top-map* (kbd "C-M-N") "gprev-with-window")
+(define-key *top-map* (kbd "M-t") "mode-line")
+(define-key *top-map* (kbd "M-r") "iresize")
+(define-key *top-map* (kbd "M-b") "banish")
+(define-key *top-map* (kbd "M-B") "my_little_relwarp")
+(define-key *top-map* (kbd "M-z") "remove")
+(define-key *top-map* (kbd "M-Return") "exec urxvtc")
+(define-key *top-map* (kbd "M-m") "my_little_gselect")
+(define-key *top-map* (kbd "M-M") "tag-window")
+(define-key *top-map* (kbd "C-M-m") "pull-marked")
+(define-key *top-map* (kbd "M-o") "fullscreen")
+(define-key *top-map* (kbd "M-y") "exec /home/lidstah/bin/lock.sh")
+
+(setf *resize-increment* 40)
+(defun update-resize-map ()
+"on refait le mapping du mode iresize avec un incrément supérieur"
+  (let ((m (setf *resize-map* (make-sparse-keymap))))
+    (let ((i *resize-increment*))
+    (labels ((dk (m k c) (define-key m k (format nil c i))))
+      (dk m (kbd "k") "resize 0 -~D")
+      (dk m (kbd "j") "resize 0 ~D")
+      (dk m (kbd "h") "resize -~D 0")
+      (dk m (kbd "l") "resize ~D 0")
+      (dk m (kbd "RET") "exit-iresize")
+      (dk m (kbd "ESC") "abort-iresize")
+    M)))) (update-resize-map)
+		
+(setf (group-name (first (screen-groups (current-screen)))) "pcp")
+(run-commands "gnewbg ekl" "gnewbg mail" "gnewbg stm" "gnewbg oth" "restore-from-file /home/lidstah/stumpdump")
+(run-shell-command "xsetroot -cursor_name left_ptr")
+(run-shell-command "feh --bg-tile lcyanide.png")
+
+;;; vim:filetype=lisp: 

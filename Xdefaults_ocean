@@ -1,0 +1,66 @@
+Xft.dpi: 96
+
+! special
+*.foreground:   #c0c5ce
+*.background:   #2b303b
+*.cursorColor:  #c0c5ce
+
+! black
+*.color0:       #2b303b
+*.color8:       #65737e
+
+! red
+*.color1:       #bf616a
+*.color9:       #bf616a
+
+! green
+*.color2:       #a3be8c
+*.color10:      #a3be8c
+
+! yellow
+*.color3:       #ebcb8b
+*.color11:      #ebcb8b
+
+! blue
+*.color4:       #8fa1b3
+*.color12:      #8fa1b3
+
+! magenta
+*.color5:       #b48ead
+*.color13:      #b48ead
+
+! cyan
+*.color6:       #96b5b4
+*.color14:      #96b5b4
+
+! white
+*.color7:       #c0c5ce
+*.color15:      #eff1f5
+
+!urxvt.font: xft:Bitstream Vera Sans Mono-7.5
+!urxvt.font: xft:Monospace:size=8
+!urxvt.font: xft:DejaVu Sans Mono:pixelsize=10
+urxvt.font: -*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*
+urxvt.termName:  rxvt-256color
+urxvt.loginShell:         true
+urxvt.scrollBar:         false
+urxvt.secondaryScroll:    true
+urxvt.saveLines:         1024
+urxvt.cursorBlink:       false
+urxvt.urgentOnBell:       true
+urxvt.override-redirect: false
+!urxvt.borderLess:       false
+!urxvt.borderWidth:          1
+!urxvt.internalBorder:       0
+!
+! Extensions
+urxvt*perl-lib:         /usr/lib/urxvt/perl/
+urxvt*perl-ext-common:  default,matcher,searchable-scrollback
+urxvt*urlLauncher:      /usr/bin/firefox
+urxvt*matcher.button:   1
+
+! Cursor
+URxvt.borderless: true
+URxvt.internalBorder: 3
+URxvt.externalBorder: 3
+

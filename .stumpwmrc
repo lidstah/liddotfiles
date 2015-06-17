@@ -5,23 +5,23 @@
 
 (set-font "-*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*")
 (set-normal-gravity :center)
-(set-fg-color "#c0b18b")
-(set-bg-color "#1f1f1f")
-(set-border-color "#4A3638")
+(set-fg-color "#b9b9b9")
+(set-bg-color "#101010")
+(set-border-color "#525252")
 ;;(set-focus-color "dimgray")
-(set-focus-color "#d17b49")
-(set-unfocus-color   "#1f1f1f")
-(set-win-bg-color    "#1f1f1f")
-(setf *colors* (list "#4A3637"          ; 0 black
-                     "#d17b49"          ; 1 red
-                     "#7b8748"          ; 2 green
-                     "#af865a"          ; 3 yellow
-                     "#535C5C"          ; 4 blue
-                     "#775759"          ; 5 magenta
-                     "#6d715e"          ; 6 cyan
-                     "#c0b18b"          ; 7 white
-                     "#1f1f1f"          ; 8 personal
-                     "#706050"))        ; 9 personal
+(set-focus-color "#525252")
+(set-unfocus-color   "#101010")
+(set-win-bg-color    "#101010")
+(setf *colors* (list "#101010"          ; 0 black
+                     "#7c7c7c"          ; 1 red
+                     "#8e8e8e"          ; 2 green
+                     "#a0a0a0"          ; 3 yellow
+                     "#686868"          ; 4 blue
+                     "#747474"          ; 5 magenta
+                     "#868686"          ; 6 cyan
+                     "#b9b9b9"          ; 7 white
+                     "#525252"          ; 8 personal
+                     "#f7f7f7"))        ; 9 personal
 (update-color-map (current-screen))
 (set-msg-border-width 7)
 (set-frame-outline-width 3)
@@ -40,13 +40,13 @@
 (run-commands "load-module windowtags")
 
 (defcommand my_little_gnext () ()
-  (run-commands "gnext" "fselect 0" "pull-tag irc"))
+  (run-commands "gnext" "fselect 0" "pull-tag irc" "fselect 2" "pull-tag fx" "pull-hidden-other"))
 
 (defcommand my_little_gprev () ()
-  (run-commands "gprev" "fselect 0" "pull-tag irc"))
+  (run-commands "gprev" "fselect 0" "pull-tag irc" "fselect 2" "pull-tag fx" "pull-hidden-other"))
 
 (defcommand my_little_gselect () ()
-  (run-commands "gselect" "fselect 0" "pull-tag irc"))
+  (run-commands "gselect" "fselect 0" "pull-tag irc" "fselect 2" "pull-tag fx" "pull-hidden-other"))
 
 (defcommand my_little_relwarp () ()
   (run-commands "banish" "ratrelwarp -800 -800"))
@@ -59,13 +59,13 @@
 ;; modeline
 
 (setf *screen-mode-line-format*
-  (list "^b%g :: %W ::^B^8 %u^>"
-    '(:eval (run-shell-command *conky-command* t))))
+      (list "^b%g :: %W ::^B^8 %u^>"
+            '(:eval (run-shell-command *conky-command* t))))
 
 (setf *mode-line-timeout* 2)
-(setf *mode-line-background-color* "#1f1f1f")
-(setf *mode-line-foreground-color* "#c0b18b")
-(setf *mode-line-border-color* "#4A3638")
+(setf *mode-line-background-color* "#101010")
+(setf *mode-line-foreground-color* "#b9b9b9")
+(setf *mode-line-border-color* "#101010")
 (setf *mode-line-position* :bottom)
 
 (define-key *top-map* (kbd "Pause") "exec mpc toggle")
@@ -96,7 +96,7 @@
 (define-key *top-map* (kbd "M-V") "info")
 (define-key *top-map* (kbd "M-!") "exec")
 ;;; (define-key *top-map* (kbd "M-p") "exec dmenu_run -l 20 -p '>' -i -nb '#191C23' -nf '#9BBBC6' -sb '#9BBBC6' -sf '#191C23'")
-(define-key *top-map* (kbd "M-p") "exec rofi -rnow -font 'Terminus 12' -fg '#c0b18b' -bg '#1f1f1f' -lines '20' -columns '3' -hlfg '#1f1f1f' -hlbg '#c0b18b' -bc '#d17b49' -bw '3'")
+(define-key *top-map* (kbd "M-p") "exec rofi -rnow -font 'Terminus 12' -fg '#b9b9b9' -bg '#101010' -lines '20' -columns '3' -hlfg '#101010' -hlbg '#b9b9b9' -bc '#525252' -bw '3'")
 (define-key *top-map* (kbd "M-;") "eval")
 (define-key *top-map* (kbd "M-:") "colon")
 (define-key *top-map* (kbd "M-U") "windowlist")
@@ -119,7 +119,7 @@
 (define-key *top-map* (kbd "M-M") "tag-window")
 (define-key *top-map* (kbd "C-M-m") "pull-marked")
 (define-key *top-map* (kbd "M-o") "fullscreen")
-(define-key *top-map* (kbd "M-y") "exec /home/lidstah/bin/lock.sh")
+(define-key *top-map* (kbd "M-y") "exec /home/lidstah/bin/mlock.sh")
 
 (setf *resize-increment* 40)
 (defun update-resize-map ()
@@ -138,6 +138,6 @@
 (setf (group-name (first (screen-groups (current-screen)))) "pcp")
 (run-commands "gnewbg ekl" "gnewbg mail" "gnewbg stm" "gnewbg oth" "restore-from-file /home/lidstah/stumpdump")
 (run-shell-command "xsetroot -cursor_name left_ptr")
-(run-shell-command "feh --bg-tile gcyanide.png")
+(run-shell-command "feh --bg-tile lcyanide.png")
 
 ;;; vim:filetype=lisp: 

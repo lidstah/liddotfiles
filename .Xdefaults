@@ -1,12 +1,12 @@
 Xft.dpi: 96
 
 ! special
-*.foreground:   #b9b9b9
-*.background:   #101010
-*.cursorColor:  #b9b9b9
+*.foreground:   #101010
+*.background:   #f7f7f7
+*.cursorColor:  #101010
 
 ! black
-*.color0:       #101010
+*.color0:       #464646
 *.color8:       #525252
 
 ! red

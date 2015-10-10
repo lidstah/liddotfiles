@@ -1,7 +1,8 @@
 exec urxvtd &
-exec xrandr --output VGA-0 --auto --rotate normal --pos 0x0 --output HDMI-0 --auto --rotate left --right-of VGA-0 --output DVI-D-0 --auto --rotate normal --right-of HDMI-0 &
+exec xrandr --output HDMI-0 --auto --rotate normal --pos 0x0 --output DP-2 --auto --rotate left --right-of HDMI-0 --output DP-0 --auto --rotate left --right-of DP-2 --output DVI-I-1 --auto --rotate normal --right-of DP-0 &
 xset +fp /usr/share/fonts/local
 xset fp rehash
+export GDK_CORE_DEVICE_EVENTS=1
 
 # WMII
 #exec /home/lidstah/bin/wmii_status.sh &
@@ -24,6 +25,8 @@ xset fp rehash
 
 #StumpWM
 
+xmodmap -e "clear mod4"
+xmodmap -e "keycode 133 = F20"
 exec /home/lidstah/bin/wmii_status.sh &
 exec /home/lidstah/src/stumpwm/stumpwm
 
@@ -34,10 +37,6 @@ exec /home/lidstah/src/stumpwm/stumpwm
 
 # NOTION
 #exec notion
-
-# STUMPWM
-#exec /home/lidstah/bin/stumpconk.sh &
-#exec /usr/local/bin/stumpwm
 
 # RATPOISON STABLE & DEV
 #exec ratpoison

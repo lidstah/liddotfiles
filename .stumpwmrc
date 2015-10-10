@@ -2,13 +2,14 @@
 ;;; #Date#: 30 May 2010 16:56
 
 (in-package :stumpwm)
+(load-module "windowtags")
 
 (set-font "-*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*")
 (set-normal-gravity :center)
 (set-fg-color "#101010")
 (set-bg-color "#f7f7f7")
 (set-border-color "#101010")
-(set-focus-color "#101010")
+(set-focus-color "#ff1111")
 (set-unfocus-color   "#f7f7f7")
 (set-win-bg-color    "#f7f7f7")
 (setf *colors* (list "#464646"          ; 0 black
@@ -22,29 +23,35 @@
                      "#525252"          ; 8 personal
                      "#f7f7f7"))        ; 9 personal
 (update-color-map (current-screen))
-(set-msg-border-width 7)
-(set-frame-outline-width 3)
+(set-msg-border-width 5)
+(set-frame-outline-width 0)
+;; (setf *frame-number-map* "1234567890")
+(setf *frame-number-map* "qsdfghjklm")
+ 
 (setf *maxsize-border-width* 3)
-(setf *transient-border-width* 2)
-(setf *normal-border-width* 2)
+(setf *transient-border-width* 4)
+(setf *normal-border-width* 3)
 (setf *window-border-style* :thin)
 (setf *message-window-gravity* :center)
 (setf *input-window-gravity* :center)
 (setf *mouse-focus-policy* :click)
+;; (setf *new-frame-action* :empty)
 (define-key *root-map* (kbd "c") "exec urxvtc")
 
 ;; I need to tag irc window on all groups
 ;; The Dirty Way :-)
 
-(run-commands "load-module windowtags")
 (defcommand my_little_gnext () ()
-  (run-commands "gnext" "fselect 2" "pull-tag irc" "fselect 1" "pull-tag fx"))
+  ;; (run-commands "gnext" "fselect 3" "pull-tag irc" "fselect 1" "pull-tag fx"))
+  (run-commands "gnext" "fselect f" "pull-tag irc" "fselect s" "pull-tag fx"))
 
 (defcommand my_little_gprev () ()
-  (run-commands "gprev" "fselect 2" "pull-tag irc" "fselect 1" "pull-tag fx"))
+  ;; (run-commands "gprev" "fselect 3" "pull-tag irc" "fselect 1" "pull-tag fx"))
+  (run-commands "gprev" "fselect f" "pull-tag irc" "fselect s" "pull-tag fx"))
 
 (defcommand my_little_gselect () ()
-  (run-commands "gselect" "fselect 2" "pull-tag irc" "fselect 1" "pull-tag fx"))
+  ;; (run-commands "gselect" "fselect 3" "pull-tag irc" "fselect 1" "pull-tag fx"))
+  (run-commands "gselect" "fselect f" "pull-tag irc" "fselect s" "pull-tag fx"))
 
 (defcommand my_little_relwarp () ()
   (run-commands "banish" "ratrelwarp -800 -800"))
@@ -63,9 +70,10 @@
 (setf *mode-line-timeout* 2)
 (setf *mode-line-background-color* "#f7f7f7")
 (setf *mode-line-foreground-color* "#101010")
-(setf *mode-line-border-color* "#101010")
+(setf *mode-line-border-color* "#f7f7f7")
 (setf *mode-line-position* :bottom)
 
+;; ancienne conf avec la top map (kinesis) - on garde quelques éléments utiles
 (define-key *top-map* (kbd "Pause") "exec mpc toggle")
 (define-key *top-map* (kbd "Print") "exec mpc prev")
 (define-key *top-map* (kbd "Scroll_Lock") "exec mpc next")
@@ -119,6 +127,7 @@
 ;; (define-key *top-map* (kbd "M-o") "fullscreen")
 ;; (define-key *top-map* (kbd "M-y") "exec /home/lidstah/bin/mlock.sh")
 
+;; config Maltron
 (define-key *root-map* (kbd "h") "move-focus left")
 (define-key *root-map* (kbd "l") "move-focus right")
 (define-key *root-map* (kbd "j") "move-focus down")
@@ -132,7 +141,6 @@
 (define-key *root-map* (kbd "i") "next-in-frame")
 (define-key *root-map* (kbd "F20") "other-in-frame")
 (define-key *root-map* (kbd "I") "prev-in-frame")
-(define-key *root-map* (kbd "E") "fselect")
 (define-key *root-map* (kbd "e") "pull-tag vim")
 (define-key *root-map* (kbd "C-h") "exchange-direction left")
 (define-key *root-map* (kbd "C-l") "exchange-direction right")
@@ -149,7 +157,6 @@
 (define-key *root-map* (kbd "w") "frame-windowlist")
 (define-key *root-map* (kbd "A") "time")
 (define-key *root-map* (kbd "U") "title")
-;; (define-key *root-map* (kbd "g") "kill-window")
 (define-key *root-map* (kbd "n") "my_little_gnext")
 (define-key *root-map* (kbd "C-n") "gnext-with-window")
 (define-key *root-map* (kbd "N") "my_little_gprev")
@@ -163,7 +170,8 @@
 (define-key *root-map* (kbd "m") "my_little_gselect")
 (define-key *root-map* (kbd "M") "tag-window")
 (define-key *root-map* (kbd "C-m") "pull-marked")
-(define-key *root-map* (kbd "o") "fullscreen")
+(define-key *root-map* (kbd "o") "fselect")
+(define-key *root-map* (kbd "O") "fullscreen")
 (define-key *root-map* (kbd "d") "delete-window")
 (define-key *root-map* (kbd "Y") "exec /home/lidstah/bin/mlock.sh")
 
@@ -183,6 +191,7 @@
 		
 (setf (group-name (first (screen-groups (current-screen)))) "pcp")
 (run-commands "gnewbg ekl" "gnewbg mail" "gnewbg stm" "gnewbg oth" "restore-from-file /home/lidstah/stumpdump")
+;; (run-commands "gnewbg ekl" "gnewbg mail" "gnewbg stm" "gnewbg oth")
 (run-shell-command "xsetroot -cursor_name left_ptr")
 (run-shell-command "feh --bg-tile white.png")
 (run-shell-command "xmodmap -e 'clear mod4'")

@@ -7,8 +7,8 @@ set backupdir-=.
 set backupdir^=~/tmp,/tmp
 
 syntax enable
-" set background=light
-colorscheme lid-erosion
+"set background=light
+colorscheme lid
 " colorscheme wombat256mod
 " colorscheme bubblegum
 set number
@@ -98,8 +98,8 @@ noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
-set cursorline
-set cursorcolumn
+""set cursorline
+""set cursorcolumn
 set ttyfast
 au CursorHoldI * stopinsert
 au InsertEnter * let updaterestore=&updatetime | set updatetime=15000
@@ -128,10 +128,49 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:notes_directory = '~/Documents/Notes'
-let g:Powerline_theme='long'
-let g:Powerline_colorscheme='solarized256_dark'
+""let g:Powerline_theme='long'
+""let g:Powerline_colorscheme='solarized256_dark'
 let g:VimuxOrientation = "v"
 let g:VimuxHeight = "33"
 map <leader>vr :VimuxPromptCommand<CR>
 map <leader>vc :VimuxCloseRunner<CR>
 let g:slime_target = "tmux"
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_theme='luna'
+
+"" my little web reader
+
+func! RWeb()
+    exe "split"
+    exe "enew"
+    exe "set buftype=nofile"
+    call inputsave()
+    let address = input('Enter URL: ')
+    call inputrestore()
+    let clean_address = substitute(address, '%', '\\%','g')
+    let clean_address = substitute(clean_address, '#', '\\#','g')
+    let clean_address = substitute(clean_address, '&', '\\&','g')
+    exe "silent r!rweb.sh " . clean_address
+    exe "norm gg5dd"
+endfunction
+
+func! RWebV()
+    exe "vsplit"
+    exe "enew"
+    exe "set buftype=nofile"
+    call inputsave()
+    let address = input('Enter URL: ')
+    call inputrestore()
+    let clean_address = substitute(address, '%', '\\%','g')
+    let clean_address = substitute(clean_address, '#', '\\#','g')
+    let clean_address = substitute(clean_address, '&', '\\&','g')
+    exe "silent r!rweb.sh " . clean_address
+    exe "norm gg5dd"
+endfunction
+
+command! -nargs=0 RWeb call RWeb()
+nnoremap <leader>g :RWeb<CR>
+
+command! -nargs=0 RWebV call RWebV()
+nnoremap <leader>G :RWebV<CR>

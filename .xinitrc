@@ -25,10 +25,17 @@ export GDK_CORE_DEVICE_EVENTS=1
 
 #StumpWM
 
-xmodmap -e "clear mod4"
-xmodmap -e "keycode 133 = F20"
+exec /home/lidstah/bin/malt.sh&
 exec /home/lidstah/bin/wmii_status.sh &
-exec /home/lidstah/src/stumpwm/stumpwm
+exec xset m 5/2 0 &
+#exec /home/lidstah/src/stumpwm/stumpwm
+exec sbcl --load /home/lidstah/bin/startstump
+
+# clfswm
+
+#exec /home/lidstah/bin/malt.sh&
+#xmodmap /home/lidstah/.speedswapper
+#exec /home/lidstah/src/clfswm/clfswm
 
 # bspwm
 

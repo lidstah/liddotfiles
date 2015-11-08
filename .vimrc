@@ -101,9 +101,9 @@ noremap <C-l> <C-w>l
 ""set cursorline
 ""set cursorcolumn
 set ttyfast
-au CursorHoldI * stopinsert
-au InsertEnter * let updaterestore=&updatetime | set updatetime=15000
-au InsertLeave * let &updatetime=updaterestore
+""au CursorHoldI * stopinsert
+""au InsertEnter * let updaterestore=&updatetime | set updatetime=15000
+""au InsertLeave * let &updatetime=updaterestore
 nnoremap j gj
 nnoremap k gk
 let mapleader = ","
@@ -174,3 +174,5 @@ nnoremap <leader>g :RWeb<CR>
 
 command! -nargs=0 RWebV call RWebV()
 nnoremap <leader>G :RWebV<CR>
+"" slimv
+let g:slimv_swank_cmd = '! tmux new-window -d -n REPL-SBCL "sbcl --load ~/.vim/bundle/slimv/slime/start-swank.lisp"'

@@ -1,8 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home'
-let g:netrw_dirhist_2='/home/lidstah'
-let g:netrw_dirhist_3='/home/lidstah/.config'
-let g:netrw_dirhist_4='/home/lidstah/.config/wingo'
-let g:netrw_dirhist_5='/home/lidstah/.wmii'
-let g:netrw_dirhist_6='/home/lidstah/Documents/eklablog/git/eklablog-doc/prod/conf-data'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/lidstah/Documents/eklablog/git/eklablog'
+let g:netrw_dirhist_2='/home/lidstah/src/stumpwm'
+let g:netrw_dirhist_3='/home/lidstah/src/lisp'
+let g:netrw_dirhist_4='/home/lidstah/src/lisp/cl-xkeysym'
+let g:netrw_dirhist_5='/home/lidstah/src/lisp'

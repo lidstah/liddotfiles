@@ -93,14 +93,13 @@ com! -nargs=+ GooglePythonDoc call OpenGoogle(<q-args>, 0 , 'docs.python.org')
 
 
 fun! OpenWebBrowser (address)
-    exe "split"
+    exe "vsplit"
     exe "enew"
     exe "set buftype=nofile"
     exe "silent r!lynx -dump " . a:address
-    syn reset
     "add some syntax rules (thanks to jamesson on #vim)
-    syn match Keyword /\[\d*\]\w*/ contains=Ignore
-    syn match Ignore /\[\d*\]/ contained 
+    "syn match Keyword /\[\d*\]\w*/ contains=Ignore
+    "syn match Ignore /\[\d*\]/ contained 
     exe "norm gg"
     exe "nnoremap <buffer> <tab> /\\d*\\]\\w*<cr>"
     exe 'nnoremap <buffer> <cr> F[h/^ *<c-r><c-w>. http<cr>fh"py$:call OpenLink("<c-r>p")<cr>'
@@ -163,9 +162,8 @@ fun! OpenLink (address)
     let clean_address = substitute(clean_address, '#', '\\#','g')
     let clean_address = substitute(clean_address, '&', '\\&','g')
     exe "silent r!lynx -dump " . clean_address
-    syn reset
-    syn match Keyword /\[\d*\]\w*/ contains=Ignore
-    syn match Ignore /\[\d*\]/ contained 
+    "syn match Keyword /\[\d*\]\w*/ contains=Ignore
+    "syn match Ignore /\[\d*\]/ contained 
     exe "norm gg"
     echo "reading " . a:address
 endfun

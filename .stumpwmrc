@@ -11,20 +11,20 @@
 
 (set-font "-*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*")
 (set-normal-gravity :center)
-(set-fg-color "#101010")
-(set-bg-color "#f7f7f7")
-(set-border-color "#101010")
-(set-focus-color "#ff1111")
-(set-unfocus-color   "#f7f7f7")
-(set-win-bg-color    "#f7f7f7")
-(setf *colors* (list "#464646"          ; 0 black
-                     "#7c7c7c"          ; 1 red
-                     "#8e8e8e"          ; 2 green
-                     "#a0a0a0"          ; 3 yellow
-                     "#686868"          ; 4 blue
-                     "#747474"          ; 5 magenta
-                     "#868686"          ; 6 cyan
-                     "#b9b9b9"          ; 7 white
+(set-fg-color "#e3e0d7")
+(set-bg-color "#000000")
+(set-border-color "#000000")
+(set-focus-color "#506070")
+(set-unfocus-color   "#000000")
+(set-win-bg-color    "#000000")
+(setf *colors* (list "#1E2320"          ; 0 black
+                     "#705050"          ; 1 red
+                     "#60b48a"          ; 2 green
+                     "#dfaf8f"          ; 3 yellow
+                     "#506070"          ; 4 blue
+                     "#dc8cc3"          ; 5 magenta
+                     "#8cd0d3"          ; 6 cyan
+                     "#dcdccc"          ; 7 white
                      "#525252"          ; 8 personal
                      "#f7f7f7"))        ; 9 personal
 (update-color-map (current-screen))
@@ -72,10 +72,10 @@
       (list "^b%g :: %W ::^B^0 %u^>"
             '(:eval (run-shell-command *conky-command* t))))
 
-(setf *mode-line-timeout* 2)
-(setf *mode-line-background-color* "#f7f7f7")
-(setf *mode-line-foreground-color* "#101010")
-(setf *mode-line-border-color* "#f7f7f7")
+(setf *mode-line-timeout* 5)
+(setf *mode-line-background-color* "#000000")
+(setf *mode-line-foreground-color* "#e3e0d7")
+(setf *mode-line-border-color* "#000000")
 (setf *mode-line-position* :bottom)
 
 ;; ancienne conf avec la top map (kinesis) - on garde quelques éléments utiles
@@ -107,7 +107,7 @@
 ;; (define-key *top-map* (kbd "M-V") "info")
 ;; (define-key *top-map* (kbd "M-!") "exec")
 ;; ;; (define-key *top-map* (kbd "M-p") "exec dmenu_run -l 20 -p '>' -i -nb '#191C23' -nf '#9BBBC6' -sb '#9BBBC6' -sf '#191C23'")
-(define-key *top-map* (kbd "M-p") "exec rofi -rnow -font 'Terminus 12' -fg '#101010' -bg '#f7f7f7' -lines '20' -columns '3' -hlfg '#f7f7f7' -hlbg '#101010' -bc '#474737' -bw '3'")
+(define-key *top-map* (kbd "M-p") "exec rofi -rnow -font 'Terminus 12' -fg '#e3e0d7' -bg '#000000' -lines '20' -columns '3' -hlfg '#000000' -hlbg '#e3e0d7' -bc '#000000' -bw '3'")
 (define-key *top-map* (kbd "M-;") "eval")
 (define-key *top-map* (kbd "M-:") "colon")
 ;; (define-key *top-map* (kbd "M-U") "windowlist")
@@ -144,7 +144,7 @@
 (define-key *root-map* (kbd "s") "vsplit")
 (define-key *root-map* (kbd "f") "hsplit")
 (define-key *root-map* (kbd "i") "next-in-frame")
-(define-key *root-map* (kbd "F20") "other-in-frame")
+(define-key *root-map* (kbd "F12") "other-in-frame")
 (define-key *root-map* (kbd "I") "prev-in-frame")
 (define-key *root-map* (kbd "e") "pull-tag vim")
 (define-key *root-map* (kbd "C-h") "exchange-direction left")
@@ -154,7 +154,7 @@
 (define-key *root-map* (kbd "v") "show-window-properties")
 (define-key *root-map* (kbd "V") "info")
 (define-key *root-map* (kbd "!") "exec")
-(define-key *root-map* (kbd "p") "exec rofi -show run -font 'Terminus 12' -fg '#101010' -bg '#f7f7f7' -lines '20' -columns '3' -hlfg '#f7f7f7' -hlbg '#101010' -bc '#474737' -bw '3'")
+(define-key *root-map* (kbd "p") "exec rofi -show run -font 'Terminus 12' -fg '#e3e0d7' -bg '#000000' -lines '20' -columns '3' -hlfg '#000000' -hlbg '#e3e0d7' -bc '#000000' -bw '3'")
 (define-key *root-map* (kbd ";") "eval")
 (define-key *root-map* (kbd ":") "colon")
 (define-key *root-map* (kbd "y") "windowlist")
@@ -208,7 +208,8 @@
 (run-commands "gnewbg ekl" "gnewbg mail" "gnewbg stm" "gnewbg oth" "restore-from-file /home/lidstah/stumpdump")
 ;; (run-commands "gnewbg ekl" "gnewbg mail" "gnewbg stm" "gnewbg oth")
 (run-shell-command "xsetroot -cursor_name left_ptr")
-(run-shell-command "feh --bg-tile white.png")
+;;(run-shell-command "feh --bg-tile white.png")
+(run-shell-command "xsetroot -solid black")
 (run-shell-command "xmodmap -e 'clear mod4'")
 (run-shell-command "xmodmap -e 'keycode 133 = F12'")
 (run-shell-command "xkbset bouncekeys 50")

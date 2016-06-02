@@ -1,32 +1,24 @@
 Xft.dpi: 96
-*background:  #000000
-*foreground:  #e3e0d7
 
-! black + red
-! !urxvt*color0:     #3f3f3f
-*color0:      #1E2320
-*color1:      #705050
-! ! green + yellow
-*color2:      #60b48a
-*color3:      #dfaf8f
-! ! blue + purple
-*color4:      #506070
-*color5:      #dc8cc3
-! ! cyan + white
-*color6:      #8cd0d3
-*color7:      #dcdccc
-! ! bright-black + bright-red
-*color8:      #709080
-*color9:      #dca3a3
-! ! bright-green + bright-yellow
-*color10:     #c3bf9f
-*color11:     #f0dfaf
-! ! bright-blue + bright-purple
-*color12:     #94bff3
-*color13:     #ec93d3
-! ! bright-cyan + bright-white
-*color14:     #94bff3
-*color15:     #ffffff
+*.foreground:#bbb58d
+*.background:#1d1913
+*.cursorColor:#bbb58d
+*.color0:#3d3629
+*.color8:#3d3629
+*.color1:#9e8273
+*.color9:#9e8273
+*.color2:#668766
+*.color10:#668766
+*.color3:#bdbd88
+*.color11:#bdbd88
+*.color4:#7a93a8
+*.color12:#7a93a8
+*.color5:#8f8198
+*.color13:#8f8198
+*.color6:#617571
+*.color14:#617571
+*.color7:#bbb58d
+*.color15:#bbb58d   
 
 !urxvt.font: xft:Bitstream Vera Sans Mono-7.5
 !urxvt.font: xft:Monospace:size=8
